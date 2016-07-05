@@ -38,7 +38,7 @@
 	<center><div style="width:580px;">
 
 	<h3>Current Project: Puppies</h3>
-  <h5><i>A game I am making for <a href="https://itch.io/jam/ilujam2">#ilujam 2</a>. The basic setting is a dating sim where you are a dog trying to find a date for your owner at a dog park.</i><h5>
+  <h5><i>My current project is Starwander. It's a static scene of a spaceship that I'm building out to practice my pixel art and sound creation.</i><h5>
 
 	<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
 
@@ -64,7 +64,7 @@
 		*/
 	</script>
 
-	<script async type="text/javascript" src="https://raw.githubusercontent.com/jeffcampbell/Pico-8-Games/development/puppies/puppies.js"></script>
+	<script async type="text/javascript" src="https://raw.githubusercontent.com/jeffcampbell/Pico-8-Games/development/starwander/starwander.js"></script>
 
 	<script>
 		// key blocker. prevent cursor keys from scrolling page while playing cart.
@@ -127,9 +127,19 @@
     $("#returnObject").text(JSON.stringify(result, null, 4));
     $("#commit_message").text(result.commit.message);
   }
+
+  function handleResult(result){
+  if(".p8" in result) {
+    $("#changes").text("<a href=result.commit.html_url>View changes on Github</a>");
+  }
+  else {
+    $("#changes").text("<a href="https://github.com/jeffcampbell/Pico-8-Games/">View project on Github</a>");
+  }
+
   </script>
   <h4>Latest Change:</h4>
   <p id="commit_message"></p>
+  <p id="changes"></p>
   <br/>
 	</div>
   </center>
